@@ -11,8 +11,8 @@ void WebSocketTest::handleNewMessage(const WebSocketConnectionPtr &wsConnPtr,
                                      std::string &&message,
                                      const WebSocketMessageType &type)
 {
-    // write your application logic here
-    LOG_DEBUG << "new websocket message:" << message;
+    // Write application logic here; message contains the raw frame body.
+    LOG_DEBUG << "new websocket message, size=" << message.size();
     if (type == WebSocketMessageType::Ping)
     {
         LOG_DEBUG << "recv a ping";
